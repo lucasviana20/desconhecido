@@ -1,0 +1,179 @@
+#Projeto: Quiz de prevenção a Covid19 (Lucas Ellery Viana, TIA: 42005541)
+import time
+global pontos
+pontos= 0
+explicação= ['Explicação: O uso de máscara é necessário para evitar que ao falar, espirrar ou tossir, o vírus tenha um alcance maior e assim a máscara evita que mais pessoas se contaminem.O uso do álcool gel é necessário para eliminar o vírus das mãos de um e assim evita que ao tocar em algo ele transmita o vírus e que ao levar as mãos ao rosto o vírus não esteja presente nela.',
+           'Explicação: Em geral é sempre bom evitar o elevador com outras pessoas mas se a distância recomendada de 1 metro for mantida não tem problema visando que o indivíduo ficará pouco tempo dentro do elevador.',
+           'Explicação: Como os sapatos têm contato com o chão existe uma grande possibilidade do vírus está presente na sola do sapato e o banho é necessário para eliminar o vírus caso ele esteja na pele ou no cabelo.',
+           'Explicação: Como a Covid-19 também pode ser transmitida por objetos é essencial higienizar os objetos que vem de fora da casa, pois não se sabe quem teve contato com ele.',
+           'Explicação: Em áreas abertas e respeitando a distância a probabilidade de se contaminar é extremamente baixa.',
+           'Explicação: Pessoas em grupo de risco devem manter distância de outra pessoas para evitar se contaminar pois para essas pessoas a Covid-19 pode ser mortal.',
+           'Explicação: Nos Hospitais a circulação de pessoas com Covid-19 é maior pois esse é o local que os contaminados procuram para se tratar da doença. Aeroportos possuem grande fluxo de pessoas de diversas partes do mundo. Shoppings possuem grande fluxo de pessoas em um ambiente fechado.',
+           'Explicação: No plastico e no aço o coronavírus pode sobreviver até 3 dias.',
+           'Explicação: Celulares, carteiras e chaves são objetos que as pessoas têm constante contato e são pouco higienizados por elas.',
+           'Explicação: Manter o corpo saudável é essencial para caso as pessoas venham a se contaminar a passagem do vírus seja menos agressiva. E ficar isolado em casa pode ser ruim para o psicológico de muitas pessoas, por isso trabalhar as relações sociais é essencial.']
+gabarito= ['a','b','e','c','a','d','a','a','c','c']
+resposta= []
+print('Bem vindo ao quiz de prevenção a Covid-19')
+time.sleep(1)
+print('Você responderá 10 perguntas com 5 alternativas cada. Para cada questão acertada você ganhará 10 pontos, para cada erro você perderá 7 pontos.')
+time.sleep(3)
+print('Vamos começar !!!')
+time.sleep(1)
+
+def questão1():
+    print('QUESTÃO 1')
+    print('Ao sair de casa quais itens não podem ser esquecidos?')
+    print('a) Álcool gel e Máscara \nb) Celular e Carteira \nc) Chaves e Álcool gel \nd) Carteira e Óculos de sol \ne) Mascará e Chaves ')
+    q1= input('RESPOSTA:')
+    while q1!='a' and q1!='b' and q1!='c' and q1!='d' and q1!='e':
+        print('QUESTÃO 1')
+        print('Ao sair de casa quais itens não podem ser esquecidos?')
+        print('a) Álcool gel e Máscara \nb) Celular e Carteira \nc) Chaves e Álcool gel \nd) Carteira e Óculos de sol \ne) Mascará e Chaves ')
+        q1= input('RESPOSTA:')   
+    resposta.append(q1)
+            
+questão1()
+
+def correção():
+    global pontos
+    print('GABARITO')
+    for i in range(len(gabarito)):
+        if gabarito[i]==resposta[i]:
+            print()
+            print('Questão',i+1)
+            print('Você acertou, +10')
+            pontos += 10
+            time.sleep(2)
+        else:
+            pontos -= 7
+            print()
+            print('Questão',i+1)
+            print('Você errou, -7')
+            print(explicação[i])
+            time.sleep(5)
+            
+def questão2():
+    print('QUESTÃO 2')
+    print('Qual o máximo de pessoas podem usar o elevador ao mesmo tempo?')
+    print('a) 5 \nb) Depende do tamanho do elevador, pois o essencial é manter 1m de distância \nc) 4 \nd) Se o elevador tiver 2m², até 7   \ne) 1 ')
+    q2= input('RESPOSTA:')
+    while q2!='a' and q2!='b' and q2!='c' and q2!='d' and q2!='e':
+        print('QUESTÃO 2')
+        print('Qual o máximo de pessoas podem usar o elevador ao mesmo tempo?')
+        print('a) 5 \nb) Depende do tamanho do elevador, pois o essencial é manter 1m de distância \nc) 4 \nd) Se o elevador tiver 2m², até 7   \ne) 1 ')
+        q2= input('RESPOSTA:')
+    resposta.append(q2)
+questão2()
+
+def questão3():
+    print('QUESTÃO 3')
+    print('Ao entrar em casa o que deve ser feito?')
+    print('a) Lavar as mãos \nb) Se alimentar bem \nc) Comprimentar familiares \nd) Guardar objetos pessoais \ne) Tirar os sapatos fora da residência e depois tomar banho')
+    q3= input('RESPOSTA:')
+    while q3!='a' and q3!='b' and q3!='c' and q3!='d' and q3!='e':
+        print('QUESTÃO 3')
+        print('Ao entrar em casa o que deve ser feito?')
+        print('a) Lavar as mãos \nb) Se alimentar bem \nc) Comprimentar familiares \nd) Guardar objetos pessoais \ne) Tirar os sapatos fora da residência e depois tomar banho')
+        q3= input('RESPOSTA:')
+    resposta.append(q3)
+questão3()
+
+def questão4():
+    print('QUESTÃO 4')
+    print('Ao fazer compras, qual procedimento quando chegar em casa?')
+    print('a) Utilizar ou consumir os produtos \nb) Guardar as compras \nc) Limpar com álcool 70 mph o objeto ou com água e sabão as compras \nd) Guardar objetos pessoais \ne) Esperar 30 minutos para limpar as compras')
+    q4= input('RESPOSTA:')
+    while q4!='a' and q4!='b' and q4!='c' and q4!='d' and q4!='e':
+        print('QUESTÃO 4')
+        print('Ao fazer compras, qual procedimento quando chegar em casa?')
+        print('a) Utilizar ou consumir os produtos \nb) Guardar as compras \nc) Limpar com álcool 70 mph o objeto ou com água e sabão as compras \nd) Guardar objetos pessoais \ne) Esperar 30 minutos para limpar as compras')
+        q4= input('RESPOSTA:')
+    resposta.append(q4)
+questão4()
+
+def questão5():
+    print('QUESTÃO 5')
+    print('Quais tipos de esportes/exercício físico são permitidos?')
+    print('a) Exercícios que sejam realizados em áreas abertas e respeitando a distância \nb) Futebol \nc) Basquete \nd) Futebol americano \ne) Esportes em grupo')
+    q5= input('RESPOSTA:')
+    while q5!='a' and q5!='b' and q5!='c' and q5!='d' and q5!='e':
+        print('QUESTÃO 5')
+        print('Quais tipos de esportes/exercício físico são permitidos?')
+        print('a) Exercícios que sejam realizados em áreas abertas e respeitando a distância \nb) Futebol \nc) Basquete \nd) Futebol americano \ne) Esportes em grupo')
+        q5= input('RESPOSTA:')
+    resposta.append(q5)
+questão5()
+
+def questão6():
+    print('QUESTÃO 6')
+    print('Quais os cuidados para aqueles que moram com pessoas grupo de risco?')
+    print('a) Nenhum, a chance de transmissão é baixa \nb) Somente lavar a mão já é o suficiente \nc) Só o uso de mascara já é o bastante \nd) Evitar o contato físico, todos devem lavar constantemente as mãos e isolar aquele que apresentar qualquer sintoma \ne) Evitar compartilhar objetos pessoais')
+    q6= input('RESPOSTA:')
+    while q6!='a' and q6!='b' and q6!='c' and q6!='d' and q6!='e':
+        print('QUESTÃO 6')
+        print('Quais os cuidados para aqueles que moram com pessoas grupo de risco?')
+        print('a) Nenhum, a chance de transmissão é baixa \nb) Somente lavar a mão já é o suficiente \nc) Só o uso de mascara já é o bastante \nd) Evitar o contato físico, todos devem lavar constantemente as mãos e isolar aquele que apresentar qualquer sintoma \ne) Evitar compartilhar objetos pessoais')
+        q6= input('RESPOSTA:')
+    resposta.append(q6)
+questão6()
+
+def questão7():
+    print('QUESTÃO 7')
+    print('Quais os lugares onde a atenção precisa ser reforçada?')
+    print('a) Hospitais, Aeroportos e Shoppings \nb) Parque e praias \nc) Hospitais e parques \nd) Praias e aeroportos \ne) Nenhuma das alternativas acima estão corretas')
+    q7= input('RESPOSTA:')
+    while q7!='a' and q7!='b' and q7!='c' and q7!='d' and q7!='e':
+        print('QUESTÃO 7')
+        print('Quais os lugares onde a atenção precisa ser reforçada?')
+        print('a) Hospitais, Aeroportos e Shoppings \nb) Parque e praias \nc) Hospitais e parques \nd) Praias e aeroportos \ne) Nenhuma das alternativas acima estão corretas')
+        q7= input('RESPOSTA:')
+    resposta.append(q7)
+questão7()
+
+def questão8():
+    print('QUESTÃO 8')
+    print('Quais superfícies a Covid-19 sobrevive mais tempo?')
+    print('a) Plastico e aço inoxidável. \nb) Papelão \nc) Tecido e papelão \nd) Madeira e vidro \ne) Nenhuma das alternativas acima estão corretas')
+    q8= input('RESPOSTA:')
+    while q8!='a' and q8!='b' and q8!='c' and q8!='d' and q8!='e':
+        print('QUESTÃO 8')
+        print('Quais superfícies a Covid-19 sobrevive mais tempo?')
+        print('a) Plastico e aço inoxidável. \nb) Papelão \nc) Tecido e papelão \nd) Madeira e vidro \ne) Nenhuma das alternativas acima estão corretas')
+        q8= input('RESPOSTA:')
+    resposta.append(q8)
+questão8()
+
+def questão9():
+    print('QUESTÃO 9')
+    print('Quais objetos que deve-se evitar o contato?(marque a alternativa mais correta)')
+    print('a) Potes de alcool gel \nb) Portas em ambiente privado \nc) Celulares, carteiras e chaves de outras pessoas \nd) Sabão e detergente \ne) Volante de carro ')
+    q9= input('RESPOSTA:')
+    while q9!='a' and q9!='b' and q9!='c' and q9!='d' and q9!='e':
+        print('QUESTÃO 9')
+        print('Quais objetos que deve-se evitar o contato?(marque a alternativa mais correta)')
+        print('a) Potes de alcool gel \nb) Portas em ambiente privado \nc) Celulares, carteiras e chaves de outras pessoas \nd) Sabão e detergente \ne) Volante de carro ')
+        q9= input('RESPOSTA:')
+    resposta.append(q9)
+questão9()
+
+def questão10():
+    print('QUESTÃO 10')
+    print('O que é mais importante em momento de isolamento social?(marque a alternativa mais correta)')
+    print('a) Consumir bebidas alcoolicas \nb) Sair de casa uma vez na semana \nc) Buscar praticar atividades físicas leves diariamente, manter contato virtual com amigos e familiares, dieta balanceada e prática de atividades relaxantes \nd) Evitar qualquer tipo de contato(inclusive virtual) \ne) Comer alimentos risco em gorduras para se ocupar ')
+    q10= input('RESPOSTA:')
+    while q10!='a' and q10!='b' and q10!='c' and q10!='d' and q10!='e':
+        print('QUESTÃO 10')
+        print('O que é mais importante em momento de isolamento social?(marque a alternativa mais correta)')
+        print('a) Consumir bebidas alcoolicas \nb) Sair de casa uma vez na semana \nc) Buscar praticar atividades físicas leves diariamente, manter contato virtual com amigos e familiares, dieta balanceada e prática de atividades relaxantes \nd) Evitar qualquer tipo de contato(inclusive virtual) \ne) Comer alimentos risco em gorduras para se ocupar ')
+        q10= input('RESPOSTA:')
+    resposta.append(q10)
+questão10()
+time.sleep(2)
+correção()
+print()
+print('Pontuação Total:',pontos)
+if pontos> 66:
+    print ('APROVADO')
+else:
+    print('REPROVADO, TENTE NOVAMENTE MAIS TARDE')
